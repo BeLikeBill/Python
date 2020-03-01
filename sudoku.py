@@ -18,16 +18,15 @@ def filetosudoku(filename):
 
     global a, b, size
     size = len(sudoku)
-    b = int(math.sqrt(size))  # Columns
-    a = int(size / b)  # Rows
+    b = int(math.sqrt(size))  # Columns.
+    a = int(size / b)  # Rows.
     return sudoku
 
 
 def printsudoku(sudoku):
     # Prints the sudoku to the screen.
-    [print(*x) for x in sudoku]
-    # for x in sudoku:
-    #    print(*x)
+    for x in sudoku:
+        print(*x)
 
 
 def unique(mylist):
@@ -40,7 +39,7 @@ def unique(mylist):
 def getsub(sudoku, i, j):
     # Given transpose, returns free values of its subgrid.
     i = (i//b)*b
-    j = (j // a) * a
+    j = (j//a)*a
     return [sudoku[x][y] for x in range(i, b+i) for y in range(j, a+j)]
 
 
